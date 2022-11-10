@@ -1,2 +1,4 @@
 # dots
-dotfiles ...
+simple dotfiles and templates
+
+- VIM - vimrc template
