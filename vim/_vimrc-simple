@@ -1,0 +1,96 @@
+" Simple vimrc template
+
+set encoding=utf-8
+
+cd D:\
+
+set nocompatible
+set lines=50 columns=100
+
+"make Ctrl+V = paste
+behave mswin
+source $VIMRUNTIME/mswin.vim
+
+syntax on
+
+" General option
+" ===============
+let mapleader = "," " rebind <Leader> key
+set wildmode=list:longest " make TAB behave like in a shell
+set autoread " reload file when changes happen in other editors
+
+
+" Disable backup and swap files 
+set viminfo='0,\"0,\/0,:0,f0
+set nobackup
+set nowritebackup
+set noswapfile
+
+set cm=blowfish
+
+" ==== BINDING ====
+" Stop highlight 
+" Search
+noremap <Leader>h :nohl<CR>
+noremap <Leader>R :%s///gc
+noremap <Leader>dt a<C-R>=strftime("%Y%m%d")<CR><Esc>
+noremap <Leader>tt i<C-R>=strftime("%H:%M")<CR>
+
+" === Bind open files ===
+noremap <Leader>ff :edit D:\example.txt
+
+
+"set history=700
+"set undolevels=700
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"colorscheme molokai
+colorscheme nord
+set ruler
+set colorcolumn=80
+set relativenumber
+"set guifont=consolas
+set guifont=Cascadia\ Mono:h11:cANSI
+set linebreak
+
+
+set scrolloff=3 
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+"set visualbell
+set cursorline
+set ttyfast
+set backspace=indent,eol,start
+set laststatus=2
+"set undofile
+
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+inoremap jj <ESC>
+
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
